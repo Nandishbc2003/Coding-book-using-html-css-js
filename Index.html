@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My coding Book</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to coding  Book</h1>
+  </header>
+  <main>
+    <div class="book">
+      <!-- Page 1 - Name and Designation Form -->
+      <div class="page" id="page1">
+        <form id="userInfoForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+          <label for="designation">Designation:</label>
+          <input type="text" id="designation" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+      <!-- Add more pages with different random content here -->
+      <div class="page">
+      <h2>Coding Concept: Hello World</h2>
+      <p>Explanation: The "Hello World" program is a simple introductory program in many programming languages. It prints the message "Hello, World!" to the console.</p>
+      <pre><code>
+      console.log("Hello, World!");
+      </code></pre>
+      </div>
+      
+      <!-- Continue with the other programming concepts -->
+      <div class="page">
+      <h2>Coding Concept: Factorial</h2>
+      <p>Explanation: The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.</p>
+      <pre><code>
+      function factorial(n) {
+      if (n === 0 || n === 1) {
+      return 1;
+      } else {
+      return n * factorial(n - 1);
+      }
+      }
+      
+      console.log(factorial(5)); // Output: 120
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Fibonacci Series</h2>
+      <p>Explanation: The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones.</p>
+      <pre><code>
+      function fibonacci(n) {
+      if (n === 0) return 0;
+      if (n === 1) return 1;
+      
+      return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+      
+      console.log(fibonacci(6)); // Output: 8
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Prime Numbers</h2>
+      <p>Explanation: A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.</p>
+      <pre><code>
+      function isPrime(number) {
+      if (number <= 1) return false;
+      
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) return false;
+      }
+      
+      return true;
+      }
+      
+      console.log(isPrime(17)); // Output: true
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Palindrome</h2>
+      <p>Explanation: A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward.</p>
+      <pre><code>
+      function isPalindrome(str) {
+      const reversedStr = str.split('').reverse().join('');
+      return str === reversedStr;
+      }
+      
+      console.log(isPalindrome("level")); // Output: true
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Bubble Sort</h2>
+      <p>Explanation: Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</p>
+      <pre><code>
+      function bubbleSort(arr) {
+      const len = arr.length;
+      
+      for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+      }
+      }
+      
+      return arr;
+      }
+      
+      console.log(bubbleSort([5, 2, 9, 1, 5, 6])); // Output: [1, 2, 5, 5, 6, 9]
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Binary Search</h2>
+      <p>Explanation: Binary Search is an efficient search algorithm that finds the position of a target value within a sorted array.</p>
+      <pre><code>
+      function binarySearch(arr, target) {
+      let left = 0;
+      let right = arr.length - 1;
+      
+      while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      
+      if (arr[mid] === target) return mid;
+      else if (arr[mid] < target) left = mid + 1;
+      else right = mid - 1;
+      }
+      
+      return -1;
+      }
+      
+      console.log(binarySearch([2, 4, 6, 8, 10], 8)); // Output: 3
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Linked List</h2>
+      <p>Explanation: A linked list is a linear data structure where each element is a separate object (node) that contains a reference (link) to the next element.</p>
+      <pre><code>
+      class Node {
+      constructor(data) {
+      this.data = data;
+      this.next = null;
+      }
+      }
+      
+      class LinkedList {
+      constructor() {
+      this.head = null;
+      }
+      
+      append(data) {
+      const newNode = new Node(data);
+      
+      if (!this.head) {
+      this.head = newNode;
+      } else {
+      let current = this.head;
+      while (current.next) {
+      current = current.next;
+      }
+      current.next = newNode;
+      }
+      }
+      }
+      
+      const myList = new LinkedList();
+      myList.append(5);
+      myList.append(10);
+      myList.append(15);
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Stack</h2>
+      <p>Explanation: A stack is a data structure that follows the Last In, First Out (LIFO) principle.</p>
+      <pre><code>
+      class Stack {
+      constructor() {
+      this.items = [];
+      }
+      
+      push(item) {
+      this.items.push(item);
+      }
+      
+      pop() {
+      if (!this.isEmpty()) {
+      return this.items.pop();
+      }
+      }
+      
+      peek() {
+      return this.items[this.items.length - 1];
+      }
+      
+      isEmpty() {
+      return this.items.length === 0;
+      }
+      }
+      
+      const myStack = new Stack();
+      myStack.push(10);
+      myStack.push(20);
+      console.log(myStack.pop()); // Output: 20
+      </code></pre>
+      </div>
+      <div class="page">
+      <h2>Coding Concept: Hello World</h2>
+      <p>Explanation: The "Hello World" program is a simple introductory program in many programming languages. It prints the message "Hello, World!" to the console.</p>
+      <pre><code>
+      console.log("Hello, World!");
+      </code></pre>
+      </div>
+      
+      <!-- Continue with the other programming concepts -->
+      <div class="page">
+      <h2>Coding Concept: Factorial</h2>
+      <p>Explanation: The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.</p>
+      <pre><code>
+      function factorial(n) {
+      if (n === 0 || n === 1) {
+      return 1;
+      } else {
+      return n * factorial(n - 1);
+      }
+      }
+      
+      console.log(factorial(5)); // Output: 120
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Fibonacci Series</h2>
+      <p>Explanation: The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones.</p>
+      <pre><code>
+      function fibonacci(n) {
+      if (n === 0) return 0;
+      if (n === 1) return 1;
+      
+      return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+      
+      console.log(fibonacci(6)); // Output: 8
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Prime Numbers</h2>
+      <p>Explanation: A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.</p>
+      <pre><code>
+      function isPrime(number) {
+      if (number <= 1) return false;
+      
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) return false;
+      }
+      
+      return true;
+      }
+      
+      console.log(isPrime(17)); // Output: true
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Palindrome</h2>
+      <p>Explanation: A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward.</p>
+      <pre><code>
+      function isPalindrome(str) {
+      const reversedStr = str.split('').reverse().join('');
+      return str === reversedStr;
+      }
+      
+      console.log(isPalindrome("level")); // Output: true
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Bubble Sort</h2>
+      <p>Explanation: Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</p>
+      <pre><code>
+      function bubbleSort(arr) {
+      const len = arr.length;
+      
+      for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+      }
+      }
+      
+      return arr;
+      }
+      
+      console.log(bubbleSort([5, 2, 9, 1, 5, 6])); // Output: [1, 2, 5, 5, 6, 9]
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Binary Search</h2>
+      <p>Explanation: Binary Search is an efficient search algorithm that finds the position of a target value within a sorted array.</p>
+      <pre><code>
+      function binarySearch(arr, target) {
+      let left = 0;
+      let right = arr.length - 1;
+      
+      while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      
+      if (arr[mid] === target) return mid;
+      else if (arr[mid] < target) left = mid + 1;
+      else right = mid - 1;
+      }
+      
+      return -1;
+      }
+      
+      console.log(binarySearch([2, 4, 6, 8, 10], 8)); // Output: 3
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Linked List</h2>
+      <p>Explanation: A linked list is a linear data structure where each element is a separate object (node) that contains a reference (link) to the next element.</p>
+      <pre><code>
+      class Node {
+      constructor(data) {
+      this.data = data;
+      this.next = null;
+      }
+      }
+      
+      class LinkedList {
+      constructor() {
+      this.head = null;
+      }
+      
+      append(data) {
+      const newNode = new Node(data);
+      
+      if (!this.head) {
+      this.head = newNode;
+      } else {
+      let current = this.head;
+      while (current.next) {
+      current = current.next;
+      }
+      current.next = newNode;
+      }
+      }
+      }
+      
+      const myList = new LinkedList();
+      myList.append(5);
+      myList.append(10);
+      myList.append(15);
+      </code></pre>
+      </div>
+      
+      <div class="page">
+      <h2>Coding Concept: Stack</h2>
+      <p>Explanation: A stack is a data structure that follows the Last In, First Out (LIFO) principle.</p>
+      <pre><code>
+      class Stack {
+      constructor() {
+      this.items = [];
+      }
+      
+      push(item) {
+      this.items.push(item);
+      }
+      
+      pop() {
+      if (!this.isEmpty()) {
+      return this.items.pop();
+      }
+      }
+      
+      peek() {
+      return this.items[this.items.length - 1];
+      }
+      
+      isEmpty() {
+      return this.items.length === 0;
+      }
+      }
+      
+      const myStack = new Stack();
+      myStack.push(10);
+      myStack.push(20);
+      console.log(myStack.pop()); // Output: 20
+      </code></pre>
+      </div>
+      
+  </main>
+  <div class="arrow" id="nextPageArrow">&rarr;</div>
+  <script src="script.js"></script>
+</body>
+                          </html>
